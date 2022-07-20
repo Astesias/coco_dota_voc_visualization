@@ -39,7 +39,7 @@ def label_img(nparry,bbox,category_id):
         color=colors['black']
     color=bgr2rgb(color) 
     cv2.rectangle(img, left_top, right_bottom,color, 2)
-    cv2.putText(img, names[category_id-1], left_top,cv2.FONT_HERSHEY_TRIPLEX,0.4,bgr2rgb(colors['green']),1)
+    cv2.putText(img, names[category_id-1], (x,y-4),cv2.FONT_HERSHEY_TRIPLEX,0.4,bgr2rgb(colors['cyan']),1)
     
     return img
 
@@ -97,7 +97,7 @@ def coco_viewer(json_dir,img_dir,rate,index):
 if __name__ == '__main__':
     
     # example1:
-    if 1:
+    if 0:
         ann_dir='ann1/train.json'
         img_dir='img1/'
         rate=2
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     else:
         ann_dir='ann2/train.json'
         img_dir='img2/'
-        rate=2
+        rate=1
         index=1
         
     
